@@ -14,10 +14,14 @@ public class Funcionario {
     private String nome;
     private String CPF;
     private String CTPS;
-    private short cargaHoraria;
+    private int cargaHoraria;
     private float salario;
 
-    public Funcionario(String nome, String CPF, String CTPS, short cargaHoraria, float salario) {
+    public Funcionario() {
+    }
+    
+
+    public Funcionario(String nome, String CPF, String CTPS, int cargaHoraria, float salario) {
         this.nome = nome;
         this.CPF = CPF;
         this.CTPS = CTPS;
@@ -49,11 +53,11 @@ public class Funcionario {
         this.CTPS = CTPS;
     }
 
-    public short getCargaHoraria() {
+    public int getCargaHoraria() {
         return cargaHoraria;
     }
 
-    public void setCargaHoraria(short cargaHoraria) {
+    public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
 
@@ -65,6 +69,26 @@ public class Funcionario {
         this.salario = salario;
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Funcionario) {
+                if (((Funcionario) obj).CPF.equals(this.CPF)) {
+                        return true;
+                }
+            }
+            else if(obj.equals((CPF))){
+                return true;
+            }
+            return false;
+        }
+        return false;
+
+    }
     
+    @Override
+    public String toString(){
+        return ("Nome: " +  nome + " CPF: " + CPF + " CTPS: " + CTPS + " Carga Horária: " + cargaHoraria + " Salário:" + salario);
+    }
     
 }

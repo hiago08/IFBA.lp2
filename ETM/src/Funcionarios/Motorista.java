@@ -5,7 +5,7 @@
  */
 package Funcionarios;
 
-import Agregacoes.Veiculo;
+import Veiculos.Veiculo;
      
 
 /**
@@ -17,7 +17,7 @@ public class Motorista extends Funcionario {
     private Veiculo[] veiculosMotorista;
     private int proxPL = 0;
 
-    public Motorista(String nome, String CPF, String CTPS, short cargaHoraria, float salario) {
+    public Motorista(String nome, String CPF, String CTPS, int cargaHoraria, float salario) {
         super(nome, CPF, CTPS, cargaHoraria, salario);
     }
     
